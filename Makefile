@@ -1,18 +1,20 @@
 SRCS = ft_printf.c ft_printf_utils.c
 OBJS = $(SRCS:.c=.o)
-NAME = libftprintf.a;
+NAME = libftprintf.a
 
+all: $(NAME)
 
-%.o: %.c ft_printf.h
-	ccc -c %<
+%.o: %.c libft.h
+	cc -c $<
 
-$NAME : $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+$(NAME) : $(OBJS)
+	ar rc $(NAME) $(OBJS)
+
 
 clean :
 	rm -f $(OBJS)
 
-fclean: clean
+fclean : clean
 	rm -f $(NAME)
-	
+
 re : fclean all
