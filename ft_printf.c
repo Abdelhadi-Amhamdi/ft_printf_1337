@@ -29,7 +29,7 @@ void	print_args(char ch, int *sum, va_list ap)
 	else if (ch == 'p')
 	{
 		ft_putstr("0x", sum);
-		ft_putnbr_hexa(va_arg(ap, unsigned long), 'l', sum);
+		ft_putnbr_hexa(va_arg(ap, unsigned long long), 'l', sum);
 	}
 	else if (ch == '%')
 		ft_putchar('%', sum);
