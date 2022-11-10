@@ -5,7 +5,7 @@ C_FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-%.o: %.c libft.h
+%.o: %.c ft_printf.h
 	cc $(C_FLAGS) -c $<
 
 $(NAME) : $(OBJS)
