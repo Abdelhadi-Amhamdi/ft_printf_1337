@@ -33,6 +33,8 @@ void	print_args(char ch, int *sum, va_list ap)
 	}
 	else if (ch == '%')
 		ft_putchar('%', sum);
+	else
+		ft_putchar (ch, sum);
 }
 
 int	ft_printf(const char *format, ...)
@@ -48,6 +50,8 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
+			if (!format[index + 1])
+				return (sum);
 			print_args(format[index + 1], &sum, ap);
 			index++;
 		}
